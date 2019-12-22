@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Response::error([
+        'StrMixin' => \Illuminate\Support\Str::uppercase('test'),
+        'CollectionMixin' => collect([' test '])->uppercase()->trim()->toArray(),
+    ]);
 });
